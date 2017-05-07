@@ -1,0 +1,3 @@
+---
+- name: restart mongodb
+  systemd: name=mongodb state=restarted daemon_reload=yes

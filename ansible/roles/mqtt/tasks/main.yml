@@ -1,0 +1,17 @@
+---
+# install mqtt broker
+ - name: add mosquitto key
+   apt_key: 
+     url: http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key 
+     state: present
+
+ - name: add mosquitto repo
+   apt_repository: 
+     repo: deb-src http://repo.mosquitto.org/debian stable main 
+     state: present 
+     update_cache: yes
+
+ - name: install mosquitto
+   apt: 
+     name: mosquitto 
+     state: present

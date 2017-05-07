@@ -1,0 +1,11 @@
+---
+- name: Install required packages
+  apt: name={{item}} state=present
+  become: True
+  with_items:
+    - tmux
+    - htop
+    - vim
+    - raspberrypi-bootloader
+    - expect
+    - nmap

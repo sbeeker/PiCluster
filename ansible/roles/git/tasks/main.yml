@@ -1,0 +1,6 @@
+---
+
+- name: Main playbook | install additional packages
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - git-core
