@@ -1,5 +1,7 @@
 ---
-- hosts: pi
+- hosts: clusternodes
+  remote_user: pi
+  sudo: true
 
   roles:
     - electrum

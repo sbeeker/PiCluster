@@ -10,16 +10,16 @@
   command: sh ./install_docker.sh
   args:
     creates: /usr/bin/docker
-  become: True
+  sudo: true
 
 - name: Install docker-py
   pip:
     name: docker-py
-  become: True
+  sudo: true
 
 - name: Add pi to docker group
   user:
     name: pi
     groups: docker
     append: yes
-  become: True
+  sudo: true

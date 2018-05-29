@@ -13,7 +13,7 @@
 
 - name: Install my_package
   apt: deb="/tmp/node_latest_armhf.deb"
-  become: True
+  sudo: true
   when: my_package_check_deb.rc == 1
 
 - name: Main playbook | install npm modules globally

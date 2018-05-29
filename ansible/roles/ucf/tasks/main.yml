@@ -1,7 +1,7 @@
 ---
 - name: Install required packages
   apt: name={{item}} state=present
-  become: True
+  sudo: true
   with_items:
     - ucf
 
