@@ -38,7 +38,7 @@ Run the specific role you want. Remember:
 First, we have to install the things it needs for the recipes to follow:
 
 ```sh
-ansible-playbook setup.yml -i pi
+ansible-playbook setup.yml -i hosts
 ```
 
 ## Playbooks
@@ -48,7 +48,7 @@ ansible-playbook setup.yml -i pi
 To make the Pi a BTSync back up server:
 
 ```sh
-ansible-playbook backup.yml -i pi --extra-vars="btsync_password=mybtsyncpassword"
+ansible-playbook backup.yml -i hosts --extra-vars="btsync_password=mybtsyncpassword"
 ```
 
 ### Docker
@@ -56,7 +56,7 @@ ansible-playbook backup.yml -i pi --extra-vars="btsync_password=mybtsyncpassword
 To be able to run Docker:
 
 ```sh
-ansible-playbook docker.yml -i pi
+ansible-playbook docker.yml -i hosts
 ```
 
 ### Syncthing Backup Server
@@ -64,7 +64,7 @@ ansible-playbook docker.yml -i pi
 To make the Pi a Syncthing backup server:
 
 ```sh
-ansible-playbook syncthing.yml -i pi
+ansible-playbook syncthing.yml -i hosts
 ```
 
 Visit port `8889` on your Pi to see the Web GUI.
@@ -72,7 +72,7 @@ Visit port `8889` on your Pi to see the Web GUI.
 ### RVM & Ruby
 
 ```sh
-ansible-playbook ruby.yml -i pi
+ansible-playbook ruby.yml -i hosts
 ```
 
 ### Wifi
@@ -80,7 +80,7 @@ ansible-playbook ruby.yml -i pi
 You want wifi?
 
 ```sh
-ansible-playbook wifi.yml -i pi --extra-vars="ssid_name=yourssid ssid_password=yourssidpassword"
+ansible-playbook wifi.yml -i hosts --extra-vars="ssid_name=yourssid ssid_password=yourssidpassword"
 ```
 
 ### NoIP (no-ip.com)
@@ -88,13 +88,13 @@ ansible-playbook wifi.yml -i pi --extra-vars="ssid_name=yourssid ssid_password=y
 **Hasn't been tested yet**
 
 ```sh
-ansible-playbook noip.yml -i pi --extra-vars="noip_username=yourusername noip_password=yournoippassword"
+ansible-playbook noip.yml -i hosts --extra-vars="noip_username=yourusername noip_password=yournoippassword"
 ```
 
 ### Electrum
 
 ```sh
-ansible-playbook electrum.yml -i pi
+ansible-playbook electrum.yml -i hosts
 ```
 
 ### Disable SSH login
@@ -102,7 +102,7 @@ ansible-playbook electrum.yml -i pi
 Warning: make sure you are able to log in using a ssh key, or else you won't be able to log in remotely.
 
 ```sh
-ansible-playbook secure.yml -i pi
+ansible-playbook secure.yml -i hosts
 ```
 
 ### Samba share
@@ -110,7 +110,7 @@ ansible-playbook secure.yml -i pi
 Here we create a folder on `/media/storage`, with username `pi` with password specified below:
 
 ```sh
-ansible-playbook nas.yml -i pi --extra-vars="dir=/media/storage/share smbpassword=yoursmbpassword"
+ansible-playbook nas.yml -i hosts --extra-vars="dir=/media/storage/share smbpassword=yoursmbpassword"
 ```
 
 ### BitTorrent with Deluge
@@ -118,7 +118,7 @@ ansible-playbook nas.yml -i pi --extra-vars="dir=/media/storage/share smbpasswor
 http://deluge-torrent.org
 
 ```sh
-ansible-playbook bittorrent.yml -i pi --extra-vars="deluge_username=delugeusername deluge_password=delugepassword download_location=/media/storage/downloads/bittorrent"
+ansible-playbook bittorrent.yml -i hosts --extra-vars="deluge_username=delugeusername deluge_password=delugepassword download_location=/media/storage/downloads/bittorrent"
 ```
 
 In the specified download location, you should set the following in your deluge thin client:
@@ -133,7 +133,7 @@ As shown in [this page's](http://www.howtogeek.com/142044/how-to-turn-a-raspberr
 ## Watch Mount
 
 ```sh
-ansible-playbook mount.yml -i pi --extra-vars="path=/media/storage"
+ansible-playbook mount.yml -i hosts --extra-vars="path=/media/storage"
 ```
 
 If the mount cannot be detected, it will reboot the system. If you specify a dir that really does not exist, it will keep rebooting. You have 10 cycles (about ~150 seconds -- depends on what monit is configured consider a cycle) to change it before it reboots again.
@@ -195,7 +195,7 @@ Run the specific role you want. Remember:
 First, we have to install the things it needs for the recipes to follow:
 
 ```sh
-ansible-playbook setup.yml -i pi
+ansible-playbook setup.yml -i hosts
 ```
 
 ## Playbooks
@@ -205,7 +205,7 @@ ansible-playbook setup.yml -i pi
 To make the Pi a BTSync back up server:
 
 ```sh
-ansible-playbook backup.yml -i pi --extra-vars="btsync_password=mybtsyncpassword"
+ansible-playbook backup.yml -i hosts --extra-vars="btsync_password=mybtsyncpassword"
 ```
 
 ### Docker
@@ -213,7 +213,7 @@ ansible-playbook backup.yml -i pi --extra-vars="btsync_password=mybtsyncpassword
 To be able to run Docker:
 
 ```sh
-ansible-playbook docker.yml -i pi
+ansible-playbook docker.yml -i hosts
 ```
 
 ### Syncthing Backup Server
@@ -221,7 +221,7 @@ ansible-playbook docker.yml -i pi
 To make the Pi a Syncthing backup server:
 
 ```sh
-ansible-playbook syncthing.yml -i pi
+ansible-playbook syncthing.yml -i hosts
 ```
 
 Visit port `8889` on your Pi to see the Web GUI.
@@ -229,7 +229,7 @@ Visit port `8889` on your Pi to see the Web GUI.
 ### RVM & Ruby
 
 ```sh
-ansible-playbook ruby.yml -i pi
+ansible-playbook ruby.yml -i hosts
 ```
 
 ### Wifi
@@ -237,7 +237,7 @@ ansible-playbook ruby.yml -i pi
 You want wifi?
 
 ```sh
-ansible-playbook wifi.yml -i pi --extra-vars="ssid_name=yourssid ssid_password=yourssidpassword"
+ansible-playbook wifi.yml -i hosts --extra-vars="ssid_name=yourssid ssid_password=yourssidpassword"
 ```
 
 ### NoIP (no-ip.com)
@@ -245,13 +245,13 @@ ansible-playbook wifi.yml -i pi --extra-vars="ssid_name=yourssid ssid_password=y
 **Hasn't been tested yet**
 
 ```sh
-ansible-playbook noip.yml -i pi --extra-vars="noip_username=yourusername noip_password=yournoippassword"
+ansible-playbook noip.yml -i hosts --extra-vars="noip_username=yourusername noip_password=yournoippassword"
 ```
 
 ### Electrum
 
 ```sh
-ansible-playbook electrum.yml -i pi
+ansible-playbook electrum.yml -i hosts
 ```
 
 ### Disable SSH login
@@ -259,7 +259,7 @@ ansible-playbook electrum.yml -i pi
 Warning: make sure you are able to log in using a ssh key, or else you won't be able to log in remotely.
 
 ```sh
-ansible-playbook secure.yml -i pi
+ansible-playbook secure.yml -i hosts
 ```
 
 ### Samba share
@@ -267,7 +267,7 @@ ansible-playbook secure.yml -i pi
 Here we create a folder on `/media/storage`, with username `pi` with password specified below:
 
 ```sh
-ansible-playbook nas.yml -i pi --extra-vars="dir=/media/storage/share smbpassword=yoursmbpassword"
+ansible-playbook nas.yml -i hosts --extra-vars="dir=/media/storage/share smbpassword=yoursmbpassword"
 ```
 
 ### BitTorrent with Deluge
@@ -275,7 +275,7 @@ ansible-playbook nas.yml -i pi --extra-vars="dir=/media/storage/share smbpasswor
 http://deluge-torrent.org
 
 ```sh
-ansible-playbook bittorrent.yml -i pi --extra-vars="deluge_username=delugeusername deluge_password=delugepassword download_location=/media/storage/downloads/bittorrent"
+ansible-playbook bittorrent.yml -i hosts --extra-vars="deluge_username=delugeusername deluge_password=delugepassword download_location=/media/storage/downloads/bittorrent"
 ```
 
 In the specified download location, you should set the following in your deluge thin client:
@@ -290,7 +290,7 @@ As shown in [this page's](http://www.howtogeek.com/142044/how-to-turn-a-raspberr
 ## Watch Mount
 
 ```sh
-ansible-playbook mount.yml -i pi --extra-vars="path=/media/storage"
+ansible-playbook mount.yml -i hosts --extra-vars="path=/media/storage"
 ```
 
 If the mount cannot be detected, it will reboot the system. If you specify a dir that really does not exist, it will keep rebooting. You have 10 cycles (about ~150 seconds -- depends on what monit is configured consider a cycle) to change it before it reboots again.
@@ -312,3 +312,31 @@ You should create the directory where you want it to be mounted: `sudo mkdir /me
 ## Format disk
 
 If you need format the drive, see [this](http://superuser.com/questions/643765/creating-ext4-partition-from-console).
+
+
+
+ansible-playbook aptu.yml -i hosts
+ansible-playbook backup.yml -i hosts
+ansible-playbook base.yml -i hosts
+ansible-playbook bittorrent.yml -i hosts
+ansible-playbook docker.yml -i hosts
+ansible-playbook electrum.yml -i hosts
+ansible-playbook git.yml -i hosts
+ansible-playbook mongodb.yml -i hosts
+ansible-playbook monit.yml -i hosts
+ansible-playbook mount.yml -i hosts
+ansible-playbook mqtt.yml -i hosts
+ansible-playbook mysql.yml -i hosts
+ansible-playbook nas.yml -i hosts
+ansible-playbook nodejs.yml -i hosts
+ansible-playbook noip.yml -i hosts
+ansible-playbook port_forwarded.yml -i hosts
+ansible-playbook postgresql.yml -i hosts
+ansible-playbook python.yml -i hosts
+ansible-playbook ruby.yml -i hosts
+ansible-playbook secure.yml -i hosts
+ansible-playbook setup.yml -i hosts
+ansible-playbook syncthing.yml -i hosts
+ansible-playbook ucf.yml -i hosts
+ansible-playbook wifi.yml -i hosts
+ansible-playbook zeromq.yml -i hosts
