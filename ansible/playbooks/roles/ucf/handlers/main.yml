@@ -1,0 +1,3 @@
+---
+- name: Restart ufw
+  systemd: name=ufw state=restarted daemon_reload=yes

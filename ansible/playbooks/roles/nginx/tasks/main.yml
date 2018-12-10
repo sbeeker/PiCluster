@@ -1,0 +1,12 @@
+---
+- name: Install nginx
+  apt: name=nginx state=present
+  become: yes
+  notify:
+    - start nginx
+
+- name: Remove nginx default
+  file: path=/etc/nginx/sites-enabled/default state=absent
+  become: yes
+  notify:
+    - reload nginx
