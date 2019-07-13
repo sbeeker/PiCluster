@@ -26,6 +26,7 @@ It looks like the new version of Raspbian do not have SSH enabled. This is proba
 
 - Add your SSH key to the pi (On OSX? You may need `brew install ssh-copy-id`):
 
+ssh-keygen
 ssh-copy-id -i ~/.ssh/id_rsa.pub pi@ip.address
 
 Here on, you can do the following remotely.
@@ -37,6 +38,12 @@ SSH into your pi and install ansible.
 sudo apt-get update
 sudo apt-get install python3.4-minimal python3.4 python-crypto python-markupsafe python-jinja2 python-paramiko python-pkg-resources python-setuptools python-pip python-yaml -y
 sudo pip install ansible
+
+# Test Ansible
+
+
+ansible -i <hosts file> <host desc> -a <command>
+ansible -i hosts dc1 -a "date"
 
 ## Ansible
 
