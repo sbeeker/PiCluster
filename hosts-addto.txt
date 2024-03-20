@@ -1,0 +1,6 @@
+# Add to bottome of etc hosts
+172.19.180.254	p0 pi-controller 
+172.19.180.1	p1
+172.19.180.2	p2
+172.19.180.2	p1
+172.19.180.1	p4
