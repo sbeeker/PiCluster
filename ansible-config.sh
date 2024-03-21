@@ -11,8 +11,9 @@ ifconfig br0
 
 # Configure the PPA and install Ansible run these commands:
 sudo apt update
-sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+# these seem to cause issues
+# sudo apt install software-properties-common
+# sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 # Check installed ansible version (In my case it is 2.9.6)
 ansible --version 

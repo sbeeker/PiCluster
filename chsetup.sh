@@ -23,16 +23,15 @@ do
         set +o history
 
         # Updating username and password on pis
-        echo "$username:"$(echo '$password' | openssl passwd -6 -stdin) | sudo tee /var/lib/clusterctrl/nfs/p$pinum/boot/userconf.txt
+        echo "$username:"$(echo 'picluster' | openssl passwd -6 -stdin) | sudo tee /var/lib/clusterctrl/nfs/p$pinum/boot/userconf.txt
 
         # Turn history back on again
         set -o history
 
         sudo touch /var/lib/clusterctrl/nfs/p$pinum/boot/ssh
-        #clusterctrl on p$pinum
+        clusterctrl on p$pinum
 done
 
-#tail -f /var/log/daemon.log /var/log/kern.log
-~                                                                                                                                                                                             
+tail -f /var/log/daemon.log /var/log/kern.log
 ~                                                                                                                                                                                             
 ~                

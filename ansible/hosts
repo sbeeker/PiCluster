@@ -1,4 +1,16 @@
 [cluster]
+pi-controller
+p[0:4]
+
+[cluster:vars]
+ansible_ssh_user=pi
+nodejs_version=6
+MySQL_root_pass="mysql"
+locale="C"
+dbname=myapp 
+dbuser=postgres
+dbpassword=postgres
+[cluster]
 controller
 pi[1:4]
 

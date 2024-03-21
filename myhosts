@@ -1,5 +1,6 @@
 # add this to /etc/ansible/hosts or use the -i option on commands specifying
 [myservers]
+172.19.180.254
 172.19.180.0
 172.19.180.1
 172.19.180.2
